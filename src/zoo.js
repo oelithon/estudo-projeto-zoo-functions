@@ -1,7 +1,11 @@
+const { species } = require('./data');
 const data = require('./data');
 
-function getSpeciesByIds(ids) {
-  // seu código aqui
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/some
+
+function getSpeciesByIds(...ids) {
+  return species.filter((animal) => ids.some((id) => id === animal.id));
 }
 
 function getAnimalsOlderThan(animal, age) {
