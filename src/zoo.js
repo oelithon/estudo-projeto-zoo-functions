@@ -6,11 +6,16 @@ const data = require('./data');
 
 function getSpeciesByIds(...ids) {
   return species.filter((animal) => ids.some((id) => id === animal.id));
+  // const animalsId = species.filter((animal, index) => animal.id === ids[index]);
+  // return animalsId; // Outra forma de resolver
 }
 
 function getAnimalsOlderThan(animal, age) {
   // seu código aqui
+  
 }
+
+console.log(getAnimalsOlderThan('otters', 7));
 
 function getEmployeeByName(employeeName) {
   // seu código aqui
