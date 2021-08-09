@@ -1,7 +1,7 @@
 const { species } = require('./data');
 const data = require('./data');
 
-// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/some
 
 function getSpeciesByIds(...ids) {
@@ -10,12 +10,15 @@ function getSpeciesByIds(...ids) {
   // return animalsId; // Outra forma de resolver
 }
 
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+
 function getAnimalsOlderThan(animal, age) {
   // seu código aqui
-  
+  const specieAnimal = species
+    .find(({ name }) => name === animal).residents
+    .every((resident) => resident.age >= age);
+  return specieAnimal;
 }
-
-console.log(getAnimalsOlderThan('otters', 7));
 
 function getEmployeeByName(employeeName) {
   // seu código aqui
