@@ -1,16 +1,13 @@
 const { species, employees } = require('./data');
 const data = require('./data');
 
-// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/some
-
 function getSpeciesByIds(...ids) {
   return species.filter((animal) => ids.some((id) => id === animal.id));
   // const animalsId = species.filter((animal, index) => animal.id === ids[index]);
   // return animalsId; // Outra forma de resolver
+  // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+  // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/some
 }
-
-// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
 
 function getAnimalsOlderThan(animal, age) {
   // seu código aqui
@@ -18,6 +15,7 @@ function getAnimalsOlderThan(animal, age) {
     .find(({ name }) => name === animal).residents
     .every((resident) => resident.age >= age);
   return specieAnimal;
+  // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
 }
 
 function getEmployeeByName(employeeName) {
