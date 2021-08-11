@@ -30,7 +30,7 @@ function getEmployeeByName(employeeName) {
 
 function createEmployee(personalInfo, associatedWith) {
   // seu código aqui
-  const createObject = { ...personalInfo, ...associatedWith};
+  const createObject = { ...personalInfo, ...associatedWith };
   employees.push(createObject);
   return createObject;
   // Utilizei o spread operator para espalhar os objetos recebidos em um novo objeto.
