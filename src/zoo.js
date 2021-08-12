@@ -1,4 +1,4 @@
-const { species, employees } = require('./data');
+const { species, employees, prices } = require('./data');
 const data = require('./data');
 
 function getSpeciesByIds(...ids) {
@@ -62,6 +62,20 @@ function countAnimals(speciesName) {
 
 function calculateEntry(entrants) {
   // seu código aqui
+  // Primeiro faço o teste de entrada no parametro entrants, verificando se recebe nenhum argumento ou um objeto vazio.
+  if (entrants === undefined || entrants === {}) {
+    return 0;
+  }
+
+  // Aqui faço destructuring do parametro recebido, já que ele vai receber um objeto. Como estamos trabalhando com number, passei um default params para cada chave, isso me garante que caso não receba todas as chaves preenchidas o meu código não seja quebrado.
+  const { Adult = 0, Child = 0, Senior = 0 } = entrants;
+
+  // por fim, para finalizar a operação, criei variáveis para realizar a multiplicação das unidades recebidas, com o valor de cada chave do objeto prices no arquivo /data.js
+  const adultCalculo = Adult * prices.Adult;
+  const childCalculo = Child * prices.Child;
+  const seniorCalculo = Senior * prices.Senior;
+  const sumValues = adultCalculo + childCalculo + seniorCalculo;
+  return sumValues;
 }
 
 function getAnimalMap(options) {
