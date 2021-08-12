@@ -52,6 +52,12 @@ function addEmployee(id, firstName, lastName, managers = [], responsibleFor = []
 
 function countAnimals(speciesName) {
   // seu código aqui
+  if (speciesName !== undefined) {
+    return species.find((animal) => animal.name === speciesName).residents.length;
+  } return species.reduce((acc, { name, residents }) => {
+    acc[name] = residents.length;
+    return acc;
+  }, {});
 }
 
 function calculateEntry(entrants) {
@@ -73,8 +79,6 @@ function getOldestFromFirstSpecies(id) {
 function increasePrices(percentage) {
   // seu código aqui
 }
-
-console.log(increasePrices(20));
 
 function getEmployeeCoverage(idOrName) {
   // seu código aqui
