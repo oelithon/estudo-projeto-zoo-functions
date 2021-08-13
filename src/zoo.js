@@ -10,7 +10,6 @@ function getSpeciesByIds(...ids) {
 }
 
 function getAnimalsOlderThan(animal, age) {
-  // seu código aqui
   const specieAnimal = species
     .find(({ name }) => name === animal).residents
     .every((resident) => resident.age >= age);
@@ -19,7 +18,6 @@ function getAnimalsOlderThan(animal, age) {
 }
 
 function getEmployeeByName(employeeName) {
-  // seu código aqui
   if (employeeName === undefined) {
     return {};
   }
@@ -29,7 +27,6 @@ function getEmployeeByName(employeeName) {
 }
 
 function createEmployee(personalInfo, associatedWith) {
-  // seu código aqui
   const createObject = { ...personalInfo, ...associatedWith };
   employees.push(createObject);
   return createObject;
@@ -37,21 +34,18 @@ function createEmployee(personalInfo, associatedWith) {
 }
 
 function isManager(id) {
-  // seu código aqui
   return employees.some((funcionario) => funcionario.managers.includes(id));
 
   // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
 }
 
 function addEmployee(id, firstName, lastName, managers = [], responsibleFor = []) {
-  // seu código aqui
   employees.push({ id, firstName, lastName, managers, responsibleFor });
 
   // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/push
 }
 
 function countAnimals(speciesName) {
-  // seu código aqui
   if (speciesName !== undefined) {
     return species.find((animal) => animal.name === speciesName).residents.length;
   } return species.reduce((acc, { name, residents }) => {
@@ -61,7 +55,6 @@ function countAnimals(speciesName) {
 }
 
 function calculateEntry(entrants) {
-  // seu código aqui
   // Primeiro faço o teste de entrada no parametro entrants, verificando se recebe nenhum argumento ou um objeto vazio.
   if (entrants === undefined || entrants === {}) {
     return 0;
@@ -83,7 +76,6 @@ function getAnimalMap(options) {
 }
 
 function getSchedule(dayName) {
-  // seu código aqui
   const diasDaSemana = Object.keys(hours);
   const result = {};
   diasDaSemana.forEach((oneDay) => {
@@ -100,7 +92,6 @@ function getSchedule(dayName) {
 }
 
 function getOldestFromFirstSpecies(id) {
-  // seu código aqui
   let result = [];
 
   const employee = employees.find((codeId) => codeId.id === id);
@@ -117,10 +108,7 @@ function getOldestFromFirstSpecies(id) {
   return result;
 }
 
-console.log(getOldestFromFirstSpecies('0e7b460e-acf4-4e17-bcb3-ee472265db83'));
-
 function increasePrices(percentage) {
-  // seu código aqui
   const divisionPercent = percentage / 100;
 
   const { Adult, Child, Senior } = prices;
