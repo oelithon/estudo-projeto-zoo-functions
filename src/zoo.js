@@ -92,6 +92,23 @@ function getOldestFromFirstSpecies(id) {
 
 function increasePrices(percentage) {
   // seu código aqui
+  const divisionPercent = percentage / 100;
+
+  const { Adult, Child, Senior } = prices;
+
+  const calcPercentAdult = (divisionPercent * Adult) + Adult + 0.001;
+  const calcPercentChild = (divisionPercent * Child) + Child + 0.001;
+  const calcPercentSenior = (divisionPercent * Senior) + Senior + 0.001;
+
+  prices.Adult = parseFloat(calcPercentAdult.toFixed(2));
+  prices.Child = parseFloat(calcPercentChild.toFixed(2));
+  prices.Senior = parseFloat(calcPercentSenior.toFixed(2));
+
+  return prices;
+
+  // Usei .toFixed() para definir a quantidade de casas decimais que iria precisar, mas como esse método retorna string, precisei usar o parseFloat() para fazer a conversao do resultado em number.
+  // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
+  // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/parseFloat
 }
 
 function getEmployeeCoverage(idOrName) {
